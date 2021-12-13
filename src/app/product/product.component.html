@@ -1,0 +1,28 @@
+<p>product works!</p>
+<div class="row" style="margin-top: 30px;">
+    <div class="col">
+        <div class="card card-1">
+            <div class="card-body">
+              
+              
+              
+              <table ngClass='table table-bodered table-hover'>
+                <thead>
+                    <th>Product Id</th>
+                    <th>Product Name</th>
+                    <th>Amount</th>
+                    
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let user of arrProducts" (click)="Navigate(user.id)">
+                        <td>{{user.id}}</td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.cost}}</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+  </div>

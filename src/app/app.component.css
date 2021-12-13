@@ -1,0 +1,14 @@
+h1{
+    color: aliceblue;
+    background-color: black;
+}
+.button{
+    padding: 10px 10px 10px 10px;
+    color: black;
+}
+.employee{
+    background-color: red;
+}
+.student{
+    background-color: green;
+}

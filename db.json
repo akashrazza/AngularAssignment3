@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": 102,
+      "firstName": "Test1",
+      "lastName": "kumar",
+      "email": "T1kumar@gmail.com",
+      "city": "Hydrabad"
+    },
+    {
+      "id": 103,
+      "firstName": "Test2",
+      "lastName": "kumar",
+      "email": "T2kumar@gmail.com",
+      "city": "Hydrabad"
+    },
+    {
+      "id": 104,
+      "firstName": "Test3",
+      "lastName": "kumar",
+      "email": "T3kumar@gmail.com",
+      "city": "Hydrabad"
+    },
+    {
+      "id": 111,
+      "firstName": "ets",
+      "lastName": "kumar",
+      "email": "test@tes.com",
+      "city": "siwan"
+    }
+  ]
+}

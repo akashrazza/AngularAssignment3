@@ -1,0 +1,194 @@
+ <nav class="navbar navbar-dark mb-5">
+    <div class="container">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive = "active" routerLink = "home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive = "active" routerLink = "Product">Product</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive = "active" routerLink = "About">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive = "active" [routerLink] = "['Contact']" [queryParams] = "{'uid':'raja','password':'123'}">Contact</a>
+            </li>
+            <li>
+                <button class="btn btn-success" (click)="Login()"> Login</button>
+                <button class="btn btn-success" (click)="LogOut()"> Logout</button>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!--
+<h1>Hey there! Angular using me.</h1>
+
+<input type="text" [(ngModel)]="test"/>
+{{test}}<br/><br/><br/><br/>
+{{iNumber}}
+{{istring}}
+<br/><br/><br/><br/>
+User Details : <br/>
+username = {{user_Details.uid}}<br/>
+password = {{user_Details.pass}}<br/>
+
+<img [src]= 'image_url'/>
+
+Property Binding
+<input type="button" (click) = 'change_state_to_false()' value="enable Button"/>
+<input type="button" (click) = 'change_state_to_true()' value="disable Button"/>
+<input type="button" [disabled]='is_disable' value="enable Button"/>
+
+Template refrence: 
+<input type="test" #email placeholder="email">
+<input type="button" (click) = "send_data(email.value)" value="Show data"/>
+{{email_data}}
+
+<button [ngClass] = "'btn btn-danger'">test</button>
+
+
+<app-child [child_data] = 'parent_data' (messageToEMit) = "getmessage($event)"></app-child><br><br>hi{{child_data_out}}<br><br>
+
+
+<button [ngClass] = "'btn btn-danger'">test</button><br><br><br><br>
+<button [ngClass] = "['btn btn-danger','button']">test</button><br><br><br><br>
+
+<div [ngClass] = "bclass?'employee':'student'">
+    <form>
+        <input type="text" placeholder="username">
+        <input type="text" placeholder="passowrd">
+        <input type="button" value="login">
+    </form>
+    <button (click) = 'change()'> employee</button><br>
+    <button (click) = 'change1()'>student</button>
+</div><br><br><br><br>
+
+<input type="text" [(ngModel)]= 'strdata'>
+<p [ngStyle] = "{'background-color':strdata.toUpperCase()=='YES'?'green':'red'}">test</p><br><br><br><br>
+
+<ul>
+    <li *ngFor = "let user of obj">
+        {{user.uid}} - {{user.name}}
+    </li>
+</ul>
+<div class="container">
+    <table ngClass='table table-bodered table-hover'>
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Button</th>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let user of obj">
+                <td>{{user.uid}}</td>
+                <td>{{user.name}}</td>
+                <td><input type="button" value="edit"></td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="container">
+    <button (click) = "morning()">morning</button>
+    <button (click) = "evening()">Evening</button>
+    <br>
+    <div *ngIf = "bmorning">
+        Morning
+    </div>
+    <div *ngIf = "bevening">
+        Evening
+    </div>
+</div>
+
+<div class="container">
+    <input type="text" [(ngModel)] = 'switch_data'>
+    <div [ngSwitch] = "switch_data">
+        <div *ngSwitchCase = "1">one</div>
+        <div *ngSwitchCase = "2">two</div>
+        <div *ngSwitchCase = "3">three</div>
+        <div *ngSwitchCase = "4">four</div>
+        <div *ngSwitchCase = "5">five</div>
+        <div *ngSwitchDefault>Default</div>
+    </div>
+</div>
+
+
+<div class="container">
+    <input type="text" [(ngModel)]='pipes1'><br>
+    {{pipes1 | uppercase}}<br>
+    {{pipes1 | lowercase}}<br>
+</div>
+
+<div class="container">
+    <input type="text" [(ngModel)] = 'icurrency'>
+    {{icurrency | currency  : 'INR':'Rs.'}}
+    {{icurrency | currency  : 'USD'}}
+</div>
+
+<div class="container">
+    {{idate_str}}<br>
+    {{idate | date}}<br>
+    {{idate_date | date}}<br>
+    {{idate_str | date:'dd/MM/yyyy'}}<br>
+
+    {{idate_str | date : 'short'}}<br>
+    {{idate_str | date : 'medium'}}<br>
+    {{idate_str | date : 'long'}}<br>
+</div>
+
+<div>
+    {{obj}}<br>
+    {{obj | json}}<br>
+</div>
+
+<div>
+    {{idecimal}}<br>
+    <input type="text" [(ngModel)] = 'idecimal'><br>
+    {{idecimal | number : '1.2-3'}}
+</div>
+
+<div>
+    {{ipercent}}<br>
+    <input type="text" [(ngModel)] = 'ipercent'><br>
+    {{ipercent | percent : '1.2-3'}}<br>
+    {{ipercent | percent : '1.0-3'}}
+</div>
+
+<div>
+    {{strslicedata}}<br>
+    <input type="text" [(ngModel)] = 'strslicedata'><br>
+    {{strslicedata | slice : 2:5}}<br>
+    {{strslicedata | slice : 2:-1}}<br>
+    {{strslicedata | slice : 0:5}}<br>
+    {{strslicedata | slice : 5}}<br>
+</div>
+
+<div>
+    <input type="text" [(ngModel)] = 'itemp'>
+    {{itemp | customPipe : 'faren' | number : '1.0-3'}}
+    {{itemp | customPipe : 'celcius' | number : '1.0-3'}}
+</div>
+
+<div class="container">
+    <button (click) = "getdata()">Get Data</button>
+    <table class="table table-striped">
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Cost</th>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let element of ProductData">
+                <td>{{element.id}}</td>
+                <td>{{element.name}}</td>
+                <td>{{element.cost}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+
+
+
+<router-outlet></router-outlet>
+<!-- <app-student-component></app-student-component> -->
